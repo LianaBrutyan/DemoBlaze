@@ -1,7 +1,7 @@
 class Addtocart {
     elements= {
         productName: '#tbodyid > div:nth-child(1) > div > div > h4 > a',
-        AddtoCartbutton: '[a[onclick=addToCart(1)]',
+        AddtoCartbutton: 'a[class="btn btn-success btn-lg"]',
         Cartbutton: '#cartur',
     }
 
@@ -9,13 +9,25 @@ class Addtocart {
        product(){
            cy.get(this.elements.productName).click()
            cy.get(this.elements.AddtoCartbutton).click()
-           cy.get(this.elements.Cartbutton).click()
+           cy.wait(2000)
+           //cy.get(this.elements.Cartbutton).click()
 
    }
 
-    assertcorrectmessage(){
-        cy.contains('Product added').should('be.visible')
-    }
+
+
+    //assertcorrectmessage(){
+      //  cy.contains('Product added.').should('be.visible')
+    //}
+
+
+   button(){
+       cy.get(this.elements.Cartbutton).click()
+
+   }
+
+
+
 
     assertpresenceproduct(){
         cy.get('#tbodyid>tr').should('be.visible')

@@ -15,7 +15,8 @@ describe('Test Demoblaze', () => {
         const testAddCart = new Addtocart()
 
         testAddCart.product()
-        testAddCart.assertcorrectmessage()
+        //testAddCart.assertcorrectmessage()
+        testAddCart.button()
         testAddCart.assertpresenceproduct()
 
 

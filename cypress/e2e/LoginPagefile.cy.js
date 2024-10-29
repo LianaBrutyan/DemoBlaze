@@ -9,9 +9,9 @@ describe('Test Demoblaze', () => {
 
         testLogin.open()
         cy.wait(4000)
-       testLogin.login('TestPOM', 'testing')
+        testLogin.login('TestPOM', 'testing')
 
-       testLogin.assertsuccessfulLogin()
+        testLogin.assertsuccessfulLogin()
 
         testLogin.assertvisibleLogout()
 

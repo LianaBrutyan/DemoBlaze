@@ -14,7 +14,7 @@ class TestLogin {
     }
     type(selector,text){
         cy.get(selector).type(text,{delay: 100 })
-        //cy.get('#loginusername').focus().clear().type('TestLia').blur();
+
     }
 
     button(selector){
@@ -25,6 +25,7 @@ class TestLogin {
     login(username, password){
 
         this.button(this.elements.button)
+        cy.wait(2000)
         this.type(this.elements.usernameField,username)
         this.type(this.elements.passwordField,password)
         this.button(this.elements.Loginbutton)
